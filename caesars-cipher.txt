@@ -1,0 +1,23 @@
+function rot13(str) {
+  var char="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var res='';
+  str.toUpperCase().split("").forEach((s)=>{
+    var ind=char.indexOf(s);
+    if(ind!=-1){
+      if(ind+13>25){
+        var sind=25-ind;
+        ind=13-sind
+        res+=char[ind-1];
+      }
+      else{
+        res+=char[ind+13];
+      }
+    }
+    else{
+      res+=s;
+    }
+  })
+  return res;
+}
+
+console.log(rot13("SERR PBQR PNZC"));

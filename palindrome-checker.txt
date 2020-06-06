@@ -1,0 +1,12 @@
+function palindrome(str) {
+  str=str.toLowerCase().replace(/[^0-9a-z]/gi, '');
+  var reversestring=str.split("").reverse().join("")
+  if(str==reversestring){
+    return true
+  }
+  return false
+}
+
+
+
+console.log(palindrome("five|\_/|four"));
